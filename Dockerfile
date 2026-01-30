@@ -11,7 +11,7 @@ RUN apk add --no-cache \
   gcc make linux-headers musl-dev \
   zlib-dev zlib-static python3-dev \
   openssl-dev openssl-libs-static git grep \
-  git curl bash xz
+  git curl patch bash xz
 
   
 ENV XZ_OPT=-e9
