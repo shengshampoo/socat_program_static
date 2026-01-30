@@ -12,7 +12,7 @@ aa=$(git ls-remote  --refs --tags --sort='v:refname' git://repo.or.cz/socat.git 
 curl -sL http://www.dest-unreach.org/socat/download/socat-$aa.tar.bz2 | tar x --bzip2
 cd socat-$aa
 curl -sL https://git.alpinelinux.org/aports/plain/main/socat/use-linux-headers.patch | patch -p1
-CFLAGS="$CFLAGS -static" LDFLAGS="-static --static -no-pie -s" ./configure --prefix=/usr/local/socatmm
+CFLAGS="$CFLAGS -static -Wno-int-conversion" LDFLAGS="-static --static -no-pie -s" ./configure --prefix=/usr/local/socatmm
 make
 make install
 
